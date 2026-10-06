@@ -253,3 +253,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ needs.plan.outputs.version }}
         run: gh workflow run notify-docs.yml --repo "$GITHUB_REPOSITORY" -f "ref=v${VERSION}"
+
+  announce:
+    name: Announce the release
+    needs: [plan, smoke]
+    if: ${{ needs.plan.outputs.dry_run != 'true' }}
+    permissions: {}
+    uses: hominux/.github/.github/workflows/announce-release.yml@243a86c4baffc1a0414be35e850f6ab480cdb3cf # main
+    with:
+      tag: v${{ needs.plan.outputs.version }}
+    secrets:
+      MASTODON_INSTANCE_URL: ${{ secrets.MASTODON_INSTANCE_URL }}
+      MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+      BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+      BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
