@@ -41,4 +41,6 @@ pact-plugin-cli -y install https://github.com/hominux/pact-avro-plugin/releases/
 curl -fsSL https://github.com/hominux/pact-avro-plugin/releases/latest/download/install-plugin.sh | sh
 ----
 
+On Windows, run the command from Git Bash, MSYS or Cygwin.
+
 INFORMATION:: Set the `PACT_PLUGIN_DIR` environment variable to change the default plugin directory (`$HOME/.pact/plugins`).
