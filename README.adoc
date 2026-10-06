@@ -6,7 +6,16 @@ ____
 
 == Installation
 
-See the documentation for link:docs/modules/ROOT/pages/getting_started.adoc[install instructions].
+Install the latest release into your Pact plugin directory:
+
+[source,shell]
+----
+curl -fsSL https://github.com/hominux/pact-avro-plugin/releases/latest/download/install-plugin.sh | sh
+----
+
+Binaries exist for Linux, macOS and Windows on x86_64 and aarch64. See the
+link:docs/modules/ROOT/pages/getting_started.adoc[getting started guide] for the Pact CLI install and platform requirements.
+On Windows, run the command from Git Bash, MSYS or Cygwin.
 
 == Development Roadmap
 
