@@ -17,6 +17,72 @@ Binaries exist for Linux, macOS and Windows on x86_64 and aarch64. See the
 link:docs/modules/ROOT/pages/getting_started.adoc[getting started guide] for the Pact CLI install and platform requirements.
 On Windows, run the command from Git Bash, MSYS or Cygwin.
 
+== Usage
+
+A consumer test loads the plugin, points it at an Avro schema, and describes the fields it relies on. The plugin encodes
+a real Avro message from that description and records matching rules in the pact.
+
+.item.avsc
+[source,json]
+----
+{
+  "type": "record",
+  "name": "Item",
+  "namespace": "com.example",
+  "fields": [
+    { "name": "id", "type": "long" },
+    { "name": "name", "type": "string" }
+  ]
+}
+----
+
+.Consumer test (Rust, with `pact_consumer`)
+[source,rust]
+----
+let mut builder = PactBuilder::new_v4("order-consumer", "order-provider")
+    .using_plugin("avro", None)
+    .await;
+
+builder
+    .message_interaction("an item is created", |mut i| async move {
+        i.contents_from(json!({
+            "pact:content-type": "avro/binary",
+            "pact:avro": "schemas/item.avsc",
+            "pact:record-name": "Item",
+            "id": "notEmpty('100')",
+            "name": "notEmpty('widget')"
+        }))
+        .await;
+        i
+    })
+    .await;
+----
+
+The pact file then holds the encoded message and one matching rule per field (trimmed):
+
+[source,json]
+----
+{
+  "contents": {
+    "content": "yAEMd2lkZ2V0",
+    "contentType": "avro/binary;record=Item",
+    "encoded": "base64"
+  },
+  "description": "an item is created",
+  "matchingRules": {
+    "body": {
+      "$.id": { "combine": "AND", "matchers": [{ "match": "notEmpty" }] },
+      "$.name": { "combine": "AND", "matchers": [{ "match": "notEmpty" }] }
+    }
+  },
+  "type": "Asynchronous/Messages"
+}
+----
+
+The plugin works with any Pact language that supports plugins. See the
+link:docs/modules/ROOT/pages/testing.adoc[testing guide] for the provider side and a larger schema, and the
+link:docs/modules/ROOT/pages/configuration.adoc[configuration reference] for every key and error.
+
 == Development Roadmap
 
 Pact plugin development board: https://github.com/pact-foundation/pact-plugins/projects/1
