@@ -1,5 +1,7 @@
 = Pact Avro Plugin image:https://sonarcloud.io/api/project_badges/measure?project=hominux_pact-avro-plugin&metric=coverage[Coverage,link=https://sonarcloud.io/summary/new_code?id=hominux_pact-avro-plugin]
 
+image::docs/modules/ROOT/images/logo.svg[Pact Avro Plugin logo,96,96]
+
 ____
 Pact plugin for testing messages serialised by https://avro.apache.org/docs[Apache Avro] using the https://docs.pact.io[Pact] contract testing framework.
 ____
