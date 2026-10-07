@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Curly braces around a check mark above a row of bits">
+  <rect width="512" height="512" rx="96" fill="#0f1829"/>
+  <g transform="translate(0 -14)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#f7fcff" stroke-width="28">
+      <path d="M192 118Q150 118 150 160V226Q150 256 118 256Q150 256 150 286V352Q150 394 192 394"/>
+      <path d="M320 118Q362 118 362 160V226Q362 256 394 256Q362 256 362 286V352Q362 394 320 394"/>
+    </g>
+    <path d="M204 258L243 297L308 212" stroke="#38bdf8" stroke-width="32"/>
+  </g>
+  <g transform="translate(0 -14)">
+    <g fill="#38bdf8">
+      <rect x="134" y="428" width="20" height="20" rx="5"/>
+      <rect x="178" y="428" width="20" height="20" rx="5" fill="none" stroke="#38bdf8" stroke-width="4"/>
+      <rect x="222" y="428" width="20" height="20" rx="5"/>
+      <rect x="266" y="428" width="20" height="20" rx="5"/>
+      <rect x="310" y="428" width="20" height="20" rx="5" fill="none" stroke="#38bdf8" stroke-width="4"/>
+      <rect x="354" y="428" width="20" height="20" rx="5"/>
+    </g>
+  </g>
+</svg>
