@@ -259,7 +259,7 @@ jobs:
     needs: [plan, smoke]
     if: ${{ needs.plan.outputs.dry_run != 'true' }}
     permissions: {}
-    uses: hominux/.github/.github/workflows/announce-release.yml@d59901b71a130937b8f81ae033aa671b0ec79aff # main
+    uses: hominux/.github/.github/workflows/announce-release.yml@bb78570522ccb51625c4dbbd0639f02e9e7769fe # main
     with:
       tag: v${{ needs.plan.outputs.version }}
     secrets:
