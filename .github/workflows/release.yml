@@ -100,7 +100,7 @@ jobs:
           - { asset: linux-x86_64,   os: ubuntu-22.04,     target: x86_64-unknown-linux-gnu }
           - { asset: linux-aarch64,  os: ubuntu-22.04-arm, target: aarch64-unknown-linux-gnu }
           - { asset: osx-x86_64,     os: macos-15-intel,   target: x86_64-apple-darwin }
-          - { asset: osx-aarch64,    os: macos-15,         target: aarch64-apple-darwin }
+          - { asset: osx-aarch64,    os: macos-latest,     target: aarch64-apple-darwin }
           - { asset: windows-x86_64, os: windows-2025,     target: x86_64-pc-windows-msvc,  ext: .exe }
           - { asset: windows-aarch64, os: windows-11-arm,  target: aarch64-pc-windows-msvc, ext: .exe }
     steps:
