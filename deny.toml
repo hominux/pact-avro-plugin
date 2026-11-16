@@ -9,6 +9,7 @@ ignore = [
     { id = "RUSTSEC-2026-0367", reason = "zip extraction preserves SUID/SGID bits; reached through pact-plugin-driver, which pins zip ^8.6.0; fixed in zip 9, remove once pact-plugin-driver adopts it" },
     { id = "RUSTSEC-2026-0368", reason = "zip extract() creates symlinks whose targets escape the destination; reached through pact-plugin-driver, which pins zip ^8.6.0; fixed in zip 9, remove once pact-plugin-driver adopts it" },
     { id = "RUSTSEC-2026-0369", reason = "zip extract() applies Unix permissions through symlinks without confining the target; reached through pact-plugin-driver, which pins zip ^8.6.0; fixed in zip 9, remove once pact-plugin-driver adopts it" },
+    { id = "RUSTSEC-2026-0429", reason = "zip extract() aborts on a symlink entry with a large declared size; reached through pact-plugin-driver, which pins zip ^8.6.0; fixed in zip 9, remove once pact-plugin-driver adopts it" },
 ]
 
 [licenses]
