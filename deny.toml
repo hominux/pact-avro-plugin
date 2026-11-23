@@ -10,9 +10,9 @@ ignore = [
     { id = "RUSTSEC-2026-0368", reason = "zip extract() creates symlinks whose targets escape the destination; reached through pact-plugin-driver, which pins zip ^8.6.0; fixed in zip 9, remove once pact-plugin-driver adopts it" },
     { id = "RUSTSEC-2026-0369", reason = "zip extract() applies Unix permissions through symlinks without confining the target; reached through pact-plugin-driver, which pins zip ^8.6.0; fixed in zip 9, remove once pact-plugin-driver adopts it" },
     { id = "RUSTSEC-2026-0429", reason = "zip extract() aborts on a symlink entry with a large declared size; reached through pact-plugin-driver, which pins zip ^8.6.0; fixed in zip 9, remove once pact-plugin-driver adopts it" },
-    { id = "RUSTSEC-2026-0543", reason = "chrono is unmaintained; reached through pact_models, pact_matching and pact-plugin-driver, and no maintained replacement exists" },
-    { id = "RUSTSEC-2026-0555", reason = "chrono-tz is unmaintained; reached through pact_models and no maintained replacement exists" },
-    { id = "RUSTSEC-2026-0542", reason = "humantime wraps unmaintained chrono; reached through pact_verifier (dev-dependency) and no maintained replacement exists" },
+    { id = "RUSTSEC-2026-0543", reason = "chrono is unmaintained; pact_models, pact_matching and pact-plugin-driver still depend on it; remove once they migrate" },
+    { id = "RUSTSEC-2026-0555", reason = "chrono-tz is unmaintained; pact_models still depends on it; remove once it migrates" },
+    { id = "RUSTSEC-2026-0542", reason = "humantime is unmaintained; the pact_verifier dev-dependency still depends on it; remove once it migrates" },
 ]
 
 [licenses]
